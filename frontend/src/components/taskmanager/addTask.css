@@ -1,0 +1,27 @@
+.taddtask {
+    width: 100%;
+}
+.tform {
+    width: 70%;
+    margin: 3rem;
+    display: flex;
+}
+.tinput {
+    padding: 5px;
+    width: 30rem;
+    border: none;
+    outline: none;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+.tbutton{
+        margin-left: 10px;
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        min-width: 150px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+}

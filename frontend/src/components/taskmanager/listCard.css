@@ -1,0 +1,24 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px auto;
+  width: 88%;
+  background-color: whitesmoke;
+  height: 8vh;
+  color: black;
+}
+.lCard_li {
+    padding: 1rem;
+    flex: 1;
+  }
+   
+.lCard_btn {
+    margin: auto 14px;
+    cursor: pointer;
+}
+ 
+.lCard_para {
+  font-size: 14px;
+  margin: 0px 240px 0px -240px;
+}
