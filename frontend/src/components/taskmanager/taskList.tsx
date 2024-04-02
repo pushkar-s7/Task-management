@@ -1,37 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import "./taskList.css";
 import ListCard from './listCard';
-
+import useTaskStore from '../../stores/taskStore';
 
 export interface Task {
   id: number;
   task: string;
 }
 
-interface Product {
-  id: number;
-  task: string
-
-}
-const id = JSON.parse(localStorage.getItem('auth') || "[]").id;
-
 const TaskList: React.FC = () => {
-  const [product, setProducts] = useState<Product[]>([]);
+  const { tasks, getAllTask } = useTaskStore((state) => ({
+    tasks: state.tasks,
+    getAllTask: state.getAllTask
+  }));
+
+  const authData = localStorage.getItem('auth');
+  const id = authData ? JSON.parse(authData).id : null;
 
   useEffect(() => {
-    getProducts(id);
-  });
-
-  const getProducts = async (id: any) => {
-    let result = await fetch(`http://localhost:5000/task/${id}`, {
-      method: 'get',
-    })
-    let result1: Product[] = await result.json();
-    setProducts(result1);
-    console.log(result1);
-  }
-
-
+    if (id !== null && id !== undefined) {
+      getAllTask(id);
+    } else {
+      console.error("Authentication data not found or malformed");
+    }
+  }, [getAllTask, id]);
 
   return (
     <div>
@@ -46,13 +38,11 @@ const TaskList: React.FC = () => {
           <h6 className='header_h5'> Action </h6>
         </li>
       </ul>
-      {
-        product.length > 0 ?
-          product.map((items, index) =>
-            <ListCard key={items.id} data={items} length={index} getProducts={getProducts} />
-          ) :
-          <h2>No Task found 🤔</h2>
-      }
+      {tasks && tasks.length > 0 ? (
+        <ListCard tasks={tasks} />
+      ) : (
+        <h2>No Task found 🤔</h2>
+      )}
     </div>
   );
 };

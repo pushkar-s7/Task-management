@@ -2,7 +2,7 @@ import './Sign.css';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
 interface FormValues {
     username: string;
     email: string;
@@ -47,12 +47,18 @@ const Signup = () => {
                 const result: ApiResponse = await response.json();
 
                 if (result) {
-                    alert('Registration successful!');
+                    toast.success('Registration Successfull', {
+                        position: "top-center",
+                        autoClose: 1000
+                      });
                     navigate('/signin');
                 }
             } catch (error: any) {
                 console.error('Error submitting form:', error);
-                alert(error);
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 2000
+                  });
             } finally {
                 resetForm();
             }

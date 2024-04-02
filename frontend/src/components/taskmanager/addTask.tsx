@@ -1,34 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './addTask.css';
+import useTaskStore from '../../stores/taskStore';
 
 const AddTask: React.FC = () => {
   const [task, setTask] = useState("");
- 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+
+  const addTask = useTaskStore((state) => state.addTask)
+
+  const HandleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     const id = JSON.parse(localStorage.getItem('auth') || "[]").id;
-
-    let result = await fetch('http://localhost:5000/add', {
-      method: 'post',
-      body: JSON.stringify({ task, id }),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    result = await result.json();
-    if (result) {
-     setTask("");
-    }
-    console.log(result);
-
-
+    addTask(task, id);
+    setTask("");
   };
 
   return (
     <div>
       <div className='taddtask'>
-        <form action='' className='tform' onSubmit={handleSubmit}>
+        <form action='' className='tform' onSubmit={HandleSubmit}>
           <input className='tinput'
             type='text'
             name='task'
@@ -45,3 +34,4 @@ const AddTask: React.FC = () => {
 };
 
 export default AddTask;
+

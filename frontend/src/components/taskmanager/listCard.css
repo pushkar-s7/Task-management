@@ -14,11 +14,16 @@
   }
    
 .lCard_btn {
-    margin: auto 14px;
+  margin: 0px -180px 0px 80px;
     cursor: pointer;
 }
  
-.lCard_para {
+.lCard_index {
   font-size: 14px;
-  margin: 0px 240px 0px -240px;
+  margin: 0px 180px 0px -180px;
+}
+ 
+.lCard_task {
+  font-size: 14px;
+  margin: 0px 0px 0px -48px;
 }

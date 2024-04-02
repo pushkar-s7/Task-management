@@ -7,12 +7,15 @@ import Home from './pages/home/Home';
 import TaskManager from './pages/taskmanagement/taskmanagement';
 import About from './pages/about/about';
 import PrivateRoute from './components/PrivateComponent/privatecomponenet';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Header />
+        <ToastContainer />
         <Routes>
           <Route element={<PrivateRoute/>}>
             <Route path='/about' element={<About/>}/>
@@ -23,6 +26,7 @@ function App() {
             <Route path='/signup' element={<Signup />} />
         </Routes>
       </Router>
+      
     </div>
 
   );
