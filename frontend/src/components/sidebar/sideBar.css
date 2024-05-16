@@ -1,0 +1,27 @@
+.sidebar {
+    background-color:   #2c5555;
+    color: white;
+    height: 88vh;
+    padding: 1px;
+    max-width: 14vw;
+    margin: 0px 0px 20px 0px;
+ 
+    
+  }
+  /* .sidebar .list-item {
+    margin: 1rem 0;
+  }# sourceMappingURL=Sidebar.css.map */
+.shome{
+    text-decoration: none;
+    font-family: cursive;
+    color: white;
+}
+.ssetting{
+    text-decoration: none;
+    font-family: cursive;
+    color: white;
+}
+ .sname{
+    font-family: cursive;
+    font-size: 18px;
+ }

@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(0, 0, 0);
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.header_logo {
+  color: white;
+  font-weight: 500;
+  font-family: cursive;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.header_button {
+  background-color: white;
+}
+
+.button_1 {
+  margin: 2px;
+  margin-right: 1px;
+  padding: 8px 12px;
+  border: 5px;
+  outline: none;
+  border-radius: 5px;
+  min-width: 52px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.button_2 {
+  margin: 2px;
+  margin-left: 8px;
+  padding: 8px 12px;
+  border: 5px;
+  outline: none;
+  border-radius: 5px;
+  min-width: 52px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  background-color: whitesmoke;
+  font-weight: 500;
+}
+
+.sign {
+  color: black;
+  font-family: cursive;
+  text-decoration: none;
+  font-weight: 500;
+}
+.button_3 {
+  margin: 2px;
+  margin-right: 1px;
+  padding: 8px 12px;
+  border: 5px;
+  outline: none;
+  border-radius: 5px;
+  min-width: 52px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  background-color: whitesmoke;
+  font-family: cursive;
+  font-weight: bold;
+}
