@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import "./taskList.css"
 import ListCard from "./listCard"
 import useTaskStore from "../../stores/taskStore"
+import useTask from "../../services/Task"
 
 export interface Task {
   id: number
@@ -9,21 +10,19 @@ export interface Task {
 }
 
 const TaskList: React.FC = () => {
-  const { tasks, getAllTask } = useTaskStore((state) => ({
-    tasks: state.tasks,
-    getAllTask: state.getAllTask,
-  }))
-
+  const taskStore = useTaskStore()
+  const tasks = taskStore.tasks
+  const { getAllTask } = useTask()
   const authData = localStorage.getItem("auth")
   const id = authData ? JSON.parse(authData).id : null
 
   useEffect(() => {
-    if (id !== null && id !== undefined) {
+    if (id) {
       getAllTask(id)
     } else {
       console.error("Authentication data not found or malformed")
     }
-  }, [getAllTask, id])
+  }, [])
 
   return (
     <div>

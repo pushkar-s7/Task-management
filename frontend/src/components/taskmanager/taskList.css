@@ -1,22 +1,22 @@
 .list-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    width: 88%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-    /* box-shadow: 0 20px 10px -20px rgba(0,0,0,0.45) inset, -20px 0 10px -20px rgba(0,0,0,0.45) inset; */
-    background-color: whitesmoke;
-    height: 8vh;
-    color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 88%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  /* box-shadow: 0 20px 10px -20px rgba(0,0,0,0.45) inset, -20px 0 10px -20px rgba(0,0,0,0.45) inset; */
+  background-color: whitesmoke;
+  height: 8vh;
+  color: black;
 }
 
 .header_lii {
-    flex: 1;
+  flex: 1;
 }
 
 .header_h5 {
-    font-size: 14px;
-    font-family: cursive;
-    margin: 0px 10px 0px -4px;
+  font-size: 14px;
+  font-family: cursive;
+  margin: 0px 10px 0px -4px;
 }
