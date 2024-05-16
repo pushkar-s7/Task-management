@@ -9,7 +9,6 @@ class Task {
   @Column()
   task: string;
  
-
   @ManyToOne(()=>Userr,(user)=>user.tasks)
    userId:Userr
 }

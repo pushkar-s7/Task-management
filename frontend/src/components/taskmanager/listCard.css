@@ -9,20 +9,20 @@
   color: black;
 }
 .lCard_li {
-    padding: 1rem;
-    flex: 1;
-  }
-   
+  padding: 1rem;
+  flex: 1;
+}
+
 .lCard_btn {
   margin: 0px -180px 0px 80px;
-    cursor: pointer;
+  cursor: pointer;
 }
- 
+
 .lCard_index {
   font-size: 14px;
   margin: 0px 180px 0px -180px;
 }
- 
+
 .lCard_task {
   font-size: 14px;
   margin: 0px 0px 0px -48px;

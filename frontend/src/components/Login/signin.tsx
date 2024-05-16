@@ -3,7 +3,6 @@ import { useFormik } from "formik"
 import * as Yup from "yup"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
-import useTaskstore from "../../stores/taskStore"
 
 interface FormValues {
   email: string
@@ -31,7 +30,6 @@ const Signin = () => {
     }),
 
     onSubmit: (values, { resetForm }) => {
-      console.log(values)
       fetch("http://localhost:5000/login", {
         method: "post",
         body: JSON.stringify(values),
@@ -46,14 +44,12 @@ const Signin = () => {
           return result.json()
         })
         .then((result1: ApiResponse) => {
-          console.log(result1)
           localStorage.setItem("auth", JSON.stringify(result1))
           toast.success("Login Successfull", {
             position: "top-center",
             autoClose: 1000,
           })
           navigate("/")
-          console.log(useTaskstore)
         })
         .catch((error) => {
           console.error("Error submitting form:", error)
@@ -104,8 +100,7 @@ const Signin = () => {
 
           <div className="form-group">
             <button type="submit" className="button">
-              {" "}
-              Sign In{" "}
+              Sign In
             </button>
           </div>
         </form>

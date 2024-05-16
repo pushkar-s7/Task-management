@@ -1,16 +1,16 @@
 import React, { useState } from "react"
 import "./addTask.css"
-import useTaskStore from "../../stores/taskStore"
+import useTask from "../../services/Task"
 
 const AddTask: React.FC = () => {
   const [task, setTask] = useState("")
 
-  const addTask = useTaskStore((state) => state.addTask)
+  const { addTask } = useTask()
 
   const HandleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const id = JSON.parse(localStorage.getItem("auth") || "[]").id
-    addTask(task, id)
+    await addTask(task, id)
     setTask("")
   }
 
